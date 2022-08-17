@@ -26,6 +26,9 @@ function App() {
   const [isRoundOver, setIsRoundOver] = useState(false);
   const [gameData, setGameData] = useState(null);
 
+  const [macsHand, setMacsHand] = useState<Array<string>>([]);
+  const [dealersHand, setDealersHand] = useState<Array<string>>([]);
+
   return (
     <GameContext.Provider
       value={{
@@ -46,8 +49,8 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<GameMenuScreen />} />
-              <Route path="/playerturn" element={<CardChoiceScreen />} />
-              <Route path="/gameplay" element={<CompetitionGameplayScreen />} />
+              <Route path="/playerturn" element={<CardChoiceScreen macsHand={macsHand} setMacsHand={setMacsHand} />} />
+              <Route path="/gameplay" element={<CompetitionGameplayScreen macsHand={macsHand} dealersHand={dealersHand} setMacsHand={setMacsHand} setDealersHand={setDealersHand} />} />
               <Route path="*" element={<NotFoundScreen />} />
             </Routes>
           </Router>
