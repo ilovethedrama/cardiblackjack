@@ -28,6 +28,7 @@ export const ScreenContainer = styled.div`
   height: 100%;
   border-radius: 10px;
   padding: 20px;
+  text-align: center;
 `;
 
 export const ButtonPrimary = styled.button`
